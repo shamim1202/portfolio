@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white dark:bg-background-dark text-gray-900 dark:text-gray-300;
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+@layer utilities {
+  .skill-card {
+    @apply flex flex-col items-center justify-center text-center space-y-3 
+       p-6 w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 
+       bg-white/50 dark:bg-[#1c2327]/50 backdrop-blur-sm 
+       rounded-xl border border-zinc-200/50 dark:border-[#3b4b54]
+       shadow-sm hover:shadow-lg hover:-translate-y-1 hover:scale-105
+       transition-all duration-300 cursor-pointer;
+  }
+
+  .skill-card p {
+    @apply font-medium text-zinc-700 dark:text-[#9db0b9];
+  }
+}
