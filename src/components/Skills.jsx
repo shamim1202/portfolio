@@ -154,15 +154,6 @@ function Skills() {
                               transition={{ duration: 1, delay: categoryIndex * 0.2 + skillIndex * 0.1 + 0.3, ease: "easeOut" }}
                             />
                           </div>
-                          <motion.span 
-                            className="text-sm font-bold text-slate-700 dark:text-slate-300 min-w-[3rem] text-right"
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: categoryIndex * 0.2 + skillIndex * 0.1 + 0.5 }}
-                          >
-                            {skill.level}%
-                          </motion.span>
                         </div>
                       </div>
                     </div>
@@ -236,16 +227,7 @@ function Skills() {
                           />
                         </div>
                         
-                        {/* Percentage Badge */}
-                        <motion.div
-                          initial={{ opacity: 0, scale: 0 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.5, delay: categoryIndex * 0.2 + skillIndex * 0.1 + 0.8 }}
-                          className="absolute -top-1 -right-1 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold px-2 py-1 rounded-full shadow-lg"
-                        >
-                          {skill.level}%
-                        </motion.div>
+
                       </div>
                       
                       {/* Skill Name */}

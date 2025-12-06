@@ -164,7 +164,7 @@ function About() {
                   animate="animate"
                 >
                   <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm p-2 sm:p-3 rounded-lg sm:rounded-xl shadow-lg shadow-slate-200/50 dark:shadow-slate-950/50 border border-slate-200/50 dark:border-slate-700/50">
-                    <Icon className={`text-3xl sm:text-4xl ${color}`} />
+                    <Icon className={`text-2xl sm:text-5xl ${color}`} />
                   </div>
                 </motion.div>
               ))}
@@ -176,7 +176,7 @@ function About() {
                 className="relative bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl rounded-xl p-3 shadow-2xl shadow-slate-200/50 dark:shadow-slate-950/50 border border-slate-200/50 dark:border-slate-700/50"
               >
                 <img
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkkMMN13d73A1qzdf04VnSUJWiQlsVntoSuoPUNQ7wGtk_GgNGUCCux6sGgXDtwZsgu-6fHbHREnBYqlvo7teWoyQeQjzKv0yk0nac7SBQdd9g5KqDAp2x04jNHnddWJWxoScEKva4D6MCM_oB-9gsZsOTgggoJLdpnuYPMeczPo4rxtPApZT4aL6q7cMF77_wq14tejJRkicsbi4EyNsFKaaG3CIbZv8StfunFCV2jj0gnEGNrvDDF01U2NsMC9k0DY5IfgZ9dy6r"
+                  src="https://i.ibb.co.com/67rDbTxT/portfolio-pic.png"
                   alt="Md. Mehedi Hasan Khan"
                   className="w-full aspect-square object-cover rounded-lg"
                 />
@@ -189,7 +189,7 @@ function About() {
                   transition={{ duration: 0.6, delay: 0.4 }}
                   className="mt-3 text-center"
                 >
-                  <p className="text-sm md:text-base font-medium text-slate-600 dark:text-slate-400 mb-1.5">
+                  <p className="text-sm md:text-base font-medium text-slate-600 dark:text-slate-300 mb-1.5">
                     Tech Stack
                   </p>
                   <div className="flex justify-center gap-1.5 flex-wrap">

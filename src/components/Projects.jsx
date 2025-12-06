@@ -6,39 +6,40 @@ function Projects() {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack online store with payment integration, user authentication, and an admin dashboard.",
-      image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80",
-      tags: ["Next.js", "React", "Stripe"],
-      category: "fullstack",
-      demoLink: "#",
-      githubLink: "#"
+      title: "Daily Loop",
+      description: "A full-stack blog and article sharing platform where users can create, read, and engage with content. Features user authentication, article management, and interactive community features.",
+      image: "https://i.ibb.co.com/Qb3Zy5g/dailyloop.png",
+      tags: ["React", "Node.js", "Express", "MongoDB"],
+      category: "mern",
+      demoLink: "https://dailyloop.netlify.app/",
+      githubFrontend: "https://github.com/shamim1202/daily-loop-client",
+      githubBackend: "https://github.com/shamim1202/daily-loop-server"
     },
     {
-      title: "Task Management App",
-      description: "A collaborative tool to organize and track tasks with real-time updates and notifications.",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
-      tags: ["React", "Firebase", "Material-UI"],
+      title: "Warm Paws",
+      description: "A compassionate pet adoption platform connecting loving families with pets in need of homes. Features pet listings, adoption requests, and user profiles for seamless pet adoption experience.",
+      image: "https://i.ibb.co.com/Qb3Zy5g/dailyloop.png",
+      tags: ["React", "Firebase", "TailwindCSS"],
       category: "frontend",
-      demoLink: "#",
-      githubLink: "#"
+      demoLink: "https://petwarmpaws.netlify.app/",
+      githubLink: "https://github.com/shamim1202/warmpaws"
     },
     {
-      title: "REST API Backend",
-      description: "Scalable backend API with authentication, database management, and real-time features.",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
-      tags: ["Node.js", "Express", "MongoDB"],
-      category: "backend",
-      demoLink: "#",
-      githubLink: "#"
+      title: "Travel Nest",
+      description: "A modern travel and tourism platform built with Next.js for optimal performance. Features destination browsing, tour packages, booking system, and user reviews with server-side rendering.",
+      image: "https://i.ibb.co.com/Qb3Zy5g/dailyloop.png",
+      tags: ["Next.js", "Node.js", "Express", "MongoDB"],
+      category: "mern",
+      demoLink: "https://travel-nest-client.vercel.app/",
+      githubFrontend: "https://github.com/shamim1202/travel-nest-client",
+      githubBackend: "https://github.com/shamim1202/travel-nest-server"
     }
   ]
 
   const tabs = [
     { id: 'all', label: 'All Projects', count: projects.length },
-    { id: 'fullstack', label: 'Full Stack', count: projects.filter(p => p.category === 'fullstack').length },
-    { id: 'frontend', label: 'Frontend', count: projects.filter(p => p.category === 'frontend').length },
-    { id: 'backend', label: 'Backend', count: projects.filter(p => p.category === 'backend').length }
+    { id: 'mern', label: 'MERN Stack', count: projects.filter(p => p.category === 'mern').length },
+    { id: 'frontend', label: 'Frontend', count: projects.filter(p => p.category === 'frontend').length }
   ]
 
   const filteredProjects = activeTab === 'all' 
@@ -152,21 +153,30 @@ function Projects() {
                 whileHover={{ y: -8 }}
                 className="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl rounded-2xl overflow-hidden shadow-lg shadow-slate-200/50 dark:shadow-slate-950/50 border border-slate-200/50 dark:border-slate-700/50"
               >
-                {/* Project Image */}
-                <div className="relative aspect-video overflow-hidden">
-                  <motion.img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.4 }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Project Live Preview */}
+                <div className="relative aspect-video overflow-hidden bg-slate-100 dark:bg-slate-900">
+                  <div className="absolute inset-0 overflow-hidden">
+                    <iframe
+                      src={project.demoLink}
+                      title={project.title}
+                      className="w-full h-[200%] origin-top scale-50 pointer-events-auto"
+                      loading="lazy"
+                      style={{ 
+                        transform: 'scale(0.5)',
+                        transformOrigin: 'top left',
+                        width: '200%',
+                        height: '200%'
+                      }}
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent pointer-events-none" />
                   
                   {/* Quick Actions */}
                   <div className="absolute bottom-4 left-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <motion.a
                       href={project.demoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       whileHover={{ scale: 1.08, y: -2 }}
                       whileTap={{ scale: 0.95 }}
                       className="group/btn flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm rounded-xl text-sm font-medium text-slate-900 dark:text-white"
@@ -178,23 +188,52 @@ function Projects() {
                       >
                         visibility
                       </motion.span>
-                      View
+                      Live
                     </motion.a>
-                    <motion.a
-                      href={project.githubLink}
-                      whileHover={{ scale: 1.08, y: -2 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="group/btn flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm rounded-xl text-sm font-medium text-slate-900 dark:text-white"
-                    >
-                      <motion.span 
-                        className="material-symbols-outlined text-base"
-                        animate={{ rotate: [0, 360] }}
-                        transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
+                    {project.githubLink ? (
+                      <motion.a
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.08, y: -2 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="group/btn flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm rounded-xl text-sm font-medium text-slate-900 dark:text-white"
                       >
-                        code
-                      </motion.span>
-                      Code
-                    </motion.a>
+                        <motion.span 
+                          className="material-symbols-outlined text-base"
+                          animate={{ rotate: [0, 360] }}
+                          transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
+                        >
+                          code
+                        </motion.span>
+                        Code
+                      </motion.a>
+                    ) : (
+                      <>
+                        <motion.a
+                          href={project.githubFrontend}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.08, y: -2 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="group/btn flex-1 flex items-center justify-center gap-1 px-2 py-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm rounded-xl text-xs font-medium text-slate-900 dark:text-white"
+                        >
+                          <span className="material-symbols-outlined text-sm">code</span>
+                          Client
+                        </motion.a>
+                        <motion.a
+                          href={project.githubBackend}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.08, y: -2 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="group/btn flex-1 flex items-center justify-center gap-1 px-2 py-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm rounded-xl text-xs font-medium text-slate-900 dark:text-white"
+                        >
+                          <span className="material-symbols-outlined text-sm">storage</span>
+                          Server
+                        </motion.a>
+                      </>
+                    )}
                   </div>
                 </div>
 
@@ -212,7 +251,7 @@ function Projects() {
                     {project.tags.map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
-                        className="px-2 sm:px-3 py-0.5 sm:py-1 text-xs font-medium bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full"
+                        className="px-2 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm font-semibold bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full border border-blue-200 dark:border-blue-800"
                       >
                         {tag}
                       </span>
